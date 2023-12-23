@@ -10,10 +10,9 @@ i = 0;
     }
     return(i);
 }
-/*
+
 int main() {
     char *a = "achraf";
     printf("%d", ft_strlen(a));
     return 0;
 }
-*/
