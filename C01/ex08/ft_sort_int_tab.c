@@ -19,7 +19,7 @@ void    ft_sort_int_tab(int *tab, int size) {
 }
 
 
-/*int main(void) {
+int main(void) {
     int tab[] = {9,8,5,7};
     int size = 4;
 
@@ -27,4 +27,4 @@ void    ft_sort_int_tab(int *tab, int size) {
 	ft_sort_int_tab(tab, size);
 	printf("after : %d, %d, %d, %d", tab[0], tab[1], tab[2], tab[3]); 
 	return 0;
-}*/
+}
