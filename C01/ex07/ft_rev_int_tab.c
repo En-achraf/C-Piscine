@@ -14,7 +14,7 @@ void    ft_rev_int_tab(int *tab, int size) {
         size--;
     }
 }
-/*
+
 int main(void) {
     int tab[] = {10,20,30,40,50,60};
     int size = 5;
@@ -24,4 +24,3 @@ int main(void) {
 	printf("after : %d, %d, %d, %d, %d, %d", tab[0], tab[1], tab[2], tab[3], tab[4], tab[5]); 
 	return (0);
 }	
-*/
