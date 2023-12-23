@@ -10,9 +10,9 @@ void    ft_putstr(char *str) {
         i++;
     }
 }
-/*
+
 int main() {
     char *a = "achraf";
     ft_putstr(a);
     return 0;
-}*/
+}
