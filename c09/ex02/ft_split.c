@@ -1,77 +1,104 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/17 17:40:01 by acennadi          #+#    #+#             */
+/*   Updated: 2024/07/17 18:20:14 by acennadi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ch7al(char *str)
+#include <stdlib.h>
+#include <stdio.h>
+
+int	sep(char c, char *sp)
 {
 	int	i;
 
 	i = 0;
-	while (str[i++])
-		;
-	return (i);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*hna;
-	int		i;
-	int		x;
-
-	x = ch7al(src);
-	i = 0;
-	hna = malloc(sizeof(char) * x);
-	if (hna == NULL)
-		return (NULL);
-	while (src[i])
+	while (sp[i])
 	{
-		hna[i] = src[i];
+		if (sp[i] == c)
+			return (1);
 		i++;
 	}
-	hna[i] = '\0';
-	return (hna);
+	return (0);
 }
 
-int len(char *str) {
-    int i = 0;
-    while (str[i]) {
-        i++;
-    }
-    return i;
+int	word(char *str, char *sp)
+{
+	int	i;
+	int	count;
+	int	flag;
+
+	i = 0;
+	count = 0;
+	flag = 1;
+	while (str[i])
+	{
+		if (sep(str[i], sp))
+		{
+			flag = 1;
+		}
+		else
+		{
+			if (flag == 1)
+			{
+				count++;
+				flag = 0;
+			}
+		}
+		i++;
+	}
+	return (count);
 }
 
-// Function to check and set substrings based on charset
-void check_set(char *str, char *set, char **here) {
-    int j = 0;
-    int i = 0;
-    int x = 0;
+char	*ft_strdup(char *src, char *set)
+{
+	int		i;
+	char	*p;
 
-    while (set[j]) {
-        i = 0; // Reset i for each character in set
-        while (str[i]) {
-            if (set[j] == str[i]) {
-                here[x] = ft_strdup(str); // Copy substring
-                x++;
-                str += i + 1; // Move str pointer past delimiter
-                i = -1; // Reset i to start over with the new substring
-            }
-            i++;
-        }
-        j++;
-    }
-    here[x] = ft_strdup(str); // Add the remaining part of str
-    here[x + 1] = NULL;    // Null-terminate the array
+	i = 0;
+	while (src[i] && !sep(src[i], set))
+		i++;
+	p = (char *)malloc(sizeof(char) * (i + 1));
+	if (!p)
+		return (NULL);
+	i = 0;
+	while (src[i] && !sep(src[i], set))
+	{
+		p[i] = src[i];
+		i++;
+	}
+	p[i] = '\0';
+	return (p);
 }
 
-// Function to split a string based on a charset
-char **ft_split(char *str, char *charset) {
-    int lenth;
-    char **here;
+char	**ft_split(char *str, char *charset)
+{
+	int		i;
+	char	**copy;
+	int		wd;
 
-    lenth = len(str);
-    here = malloc(sizeof(char *) * (lenth + 1)); // Allocate memory for the array of strings
-    if (!here) {
-        return NULL; // Check if memory allocation was successful
-    }
-
-    check_set(str, charset, here);
-    return here;
+	i = 0;
+	wd = word(str, charset);
+	copy = (char **)malloc(sizeof(char *) * (wd + 1));
+	if (!copy)
+		return (NULL);
+	while (*str)
+	{
+		if (!sep(*str, charset))
+		{
+			copy[i] = ft_strdup(str, charset);
+			i++;
+			while (*str && !sep(*str, charset))
+				str++;
+		}
+		else
+			str++;
+	}
+	copy[i] = NULL;
+	return (copy);
 }
