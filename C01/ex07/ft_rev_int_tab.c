@@ -8,8 +8,8 @@ void    ft_rev_int_tab(int *tab, int size) {
     start = 0;
     while(start < size) {
         tmp = tab[start];
-        tab[start] = tab[size];
-        tab[size] = tmp;
+        tab[start] = tab[size - 1];
+        tab[size - 1] = tmp;
         start++;
         size--;
     }
