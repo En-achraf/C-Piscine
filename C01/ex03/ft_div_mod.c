@@ -1,18 +1,19 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aennadir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/15 20:31:58 by aennadir          #+#    #+#             */
+/*   Updated: 2023/09/17 09:53:47 by aennadir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    ft_div_mod(int a,int b,int *div,int *mod) {
+#include <unistd.h>
 
-    *div = a/b;
-    *mod = a%b;
-}
-
-int main(void) {
-    int div, mod ,a ,b;
-    a = 2;
-    b = 0;
-
-    ft_div_mod(a, b, &div, &mod);
-
-    printf("the div ruselt : %d and the mod result : %d", div, mod);
-    return 0;
+void	ft_div_mod(int a, int b, int *div, int *mod)
+{
+	*div = a / b;
+	*mod = a % b;
 }

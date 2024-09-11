@@ -1,24 +1,24 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aennadir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/15 20:40:43 by aennadir          #+#    #+#             */
+/*   Updated: 2023/09/17 10:34:41 by aennadir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    ft_ultimate_div_mod(int *a, int *b) {
-   
-   int div;
-   int mod;
-    
-    div = *a / *b;
-    mod = *a % *b;
-    *a  = div;
-    *b = mod;
-}
+#include <unistd.h>
 
-int main(void) {
-    int a; 
-    int b;
-    a = 0;
-    b = 1;
+void	ft_ultimate_div_mod(int *a, int *b)
+{
+	int		div;
+	int		mod;
 
-    ft_ultimate_div_mod(&a, &b);
-
-    printf("the div ruselt : %d and the mod result : %d",a, b);
-    return 0;
+	div = *a / *b;
+	mod = *a % *b;
+	*a = div;
+	*b = mod;
 }

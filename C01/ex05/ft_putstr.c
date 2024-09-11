@@ -1,18 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aennadir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/17 16:31:12 by aennadir          #+#    #+#             */
+/*   Updated: 2023/09/17 16:31:31 by aennadir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void    ft_putstr(char *str) {
+void	ft_putstr(char *str)
+{
+	int		i;
 
-    int i; 
-
-    i = 0;
-    while(str[i] != '\0') {
-        write(1,&str[i],1);
-        i++;
-    }
-}
-
-int main() {
-    char *a = "achraf";
-    ft_putstr(a);
-    return 0;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }

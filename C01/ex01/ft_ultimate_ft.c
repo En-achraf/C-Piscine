@@ -1,26 +1,18 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aennadir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/15 20:12:18 by aennadir          #+#    #+#             */
+/*   Updated: 2023/09/15 20:50:15 by aennadir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_ultimate_ft(int *********nbr) {
-    *********nbr = 42;
+#include <unistd.h>
+
+void	ft_ultimate_ft(int *********nbr)
+{
+	*********nbr = 42;
 }
-/*
-int main() {
-    int n = 0;
-    int *nbr1 = &n;
-    int **nbr2 = &nbr1;
-    int ***nbr3 = &nbr2;
-    int ****nbr4 = &nbr3;
-    int *****nbr5 = &nbr4;
-    int ******nbr6 = &nbr5;
-    int *******nbr7 = &nbr6;
-    int ********nbr8 = &nbr7;
-    int *********nbr9 = &nbr8;
-
-    printf("Before: %d\n", n);
-
-    ft_ultimate_ft(nbr9);
-
-    printf("After: %d\n", n);
-
-    return 0;
-}*/

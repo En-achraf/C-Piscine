@@ -1,26 +1,29 @@
-//#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aennadir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/16 07:18:45 by aennadir          #+#    #+#             */
+/*   Updated: 2023/09/17 10:29:18 by aennadir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    ft_rev_int_tab(int *tab, int size) {
+#include <unistd.h>
+#include <stdio.h>
 
-    int start;
-    int tmp;
+void	ft_rev_int_tab(int *tab, int size)
+{
+	int		swap;
+	int		i;
 
-    start = 0;
-    while(start < size) {
-        tmp = tab[start];
-        tab[start] = tab[size - 1];
-        tab[size - 1] = tmp;
-        start++;
-        size--;
-    }
+	i = 0;
+	while (i < (size / 2))
+	{
+		swap = tab[i];
+		tab[i] = tab[size - 1 - i];
+		tab[size - 1 - i] = swap;
+		i++;
+	}
 }
-
-int main(void) {
-    int tab[] = {10,20,30,40,50,60};
-    int size = 5;
-
-	printf("before : %d, %d, %d, %d, %d, %d\n", tab[0], tab[1], tab[2], tab[3], tab[4], tab[5]); 
-	ft_rev_int_tab(tab, size);
-	printf("after : %d, %d, %d, %d, %d, %d", tab[0], tab[1], tab[2], tab[3], tab[4], tab[5]); 
-	return (0);
-}	

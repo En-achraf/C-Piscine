@@ -1,18 +1,25 @@
-//#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aennadir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/15 21:33:28 by aennadir          #+#    #+#             */
+/*   Updated: 2023/09/15 21:55:49 by aennadir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_strlen(char *str) {
+#include <unistd.h>
 
-int i;
+int	ft_strlen(char *str)
+{
+	int		i;
 
-i = 0;
-    while(str[i] != '\0') {
-        i++;
-    }
-    return(i);
-}
-
-int main() {
-    char *a = "achraf";
-    printf("%d", ft_strlen(a));
-    return 0;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

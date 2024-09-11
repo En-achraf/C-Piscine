@@ -1,30 +1,35 @@
-//#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aennadir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/16 20:05:43 by aennadir          #+#    #+#             */
+/*   Updated: 2023/09/17 10:33:29 by aennadir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    ft_sort_int_tab(int *tab, int size) {
-    int tmp;
-    int i;
+void	ft_sort_int_tab(int *tab, int size)
+{
+	int		i;
+	int		j;
+	int		swap;
 
-    while (size >= 0) {
-		i = 0;
-		while (i < size - 1) {
-			if (tab[i] > tab[i + 1]) {
-				tmp = tab [i];
-				tab[i] = tab [i + 1];
-				tab [i + 1] = tmp;
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (j < size)
+		{
+			if (tab[j] > tab[j + 1])
+			{
+				swap = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = swap;
 			}
-			i++;
+			j++;
 		}
-		size--;
+		i++;
 	}
-}
-
-
-int main(void) {
-    int tab[] = {9,8,5,7};
-    int size = 4;
-
-	printf("before : %d, %d, %d, %d\n", tab[0], tab[1], tab[2], tab[3]); 
-	ft_sort_int_tab(tab, size);
-	printf("after : %d, %d, %d, %d", tab[0], tab[1], tab[2], tab[3]); 
-	return 0;
 }

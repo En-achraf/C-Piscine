@@ -1,17 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aennadir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/15 20:25:23 by aennadir          #+#    #+#             */
+/*   Updated: 2023/09/17 09:53:00 by aennadir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    ft_swap(int *a, int *b) {
-    int tmp;
-    tmp = *a;
-    *a = *b;
-    *b = tmp;
+#include <unistd.h>
+
+void	ft_swap(int *a, int *b)
+{
+	int		swap;
+
+	swap = *a;
+	*a = *b;
+	*b = swap;
 }
-/*
-int main(void) {
-    int a = 5;
-    int b = 1;
-    printf("%d and %d\n",a, b);
-    ft_swap(&a,&b);
-    printf("%d and %d",a, b);
-    return 0;
-}
-/*
